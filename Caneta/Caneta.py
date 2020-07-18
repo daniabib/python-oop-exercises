@@ -4,16 +4,16 @@ import random
 class Caneta:
     pinturas = [":winking_face_with_tongue:", ":zipper-mouth_face:", ":grinning_face_with_big_eyes:", ]
 
-    def __init__(self, modelo, cor, ponta=0.5, carga=100, tampada=True):
+    def __init__(self, modelo, cor, ponta=0.5, carga=100, tampada=False):
         self.modelo = modelo
         self.cor = cor
         self.ponta = ponta
         self.carga = carga
-        self.tampada = False
+        self.tampada = tampada
         self.empty = "Acabou a tinta! =("
         
     def check_to_print(self):
-        if (not self.tampada):
+        if (self.tampada):
             print('A caneta está tampada, besta!')
         elif (self.carga <= 0):
             print(self.empty)
@@ -45,16 +45,8 @@ class Caneta:
               
     def recarregar(self):
           self.carga = 100
+          
 
 can_1 = Caneta("BIC", "Azul", ponta=0.8)
-
-# print(can_1.modelo)
-# print(can_1.cor)
-# print(can_1.ponta)
-# print(can_1.carga)
-# print(can_1.tampada)
-# print(can_1.pintar())
-# print(can_1.pintar())
-# print(can_1.pintar())
 
 
